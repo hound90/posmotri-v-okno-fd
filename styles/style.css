@@ -156,7 +156,7 @@ input {
   cursor: pointer;
 }
 
-.search-form__label:hover > .search-form__label-text {
+.search-form__label:has(:hover) .search-form__label-text {
   color: #fff;
   text-decoration: underline;
   text-decoration-skip-ink: none;
@@ -168,11 +168,7 @@ input[type="checkbox"]:checked + span.search-form__pseudo-checkbox::after {
   width: 15px;
   height: 15px;
   background: #fff;
-}
-
-.search-form__label:has(:focus-visible) {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
+  text-decoration: none;
 }
 
 /* Кнопки --------------------------------------------------------------------------------*/
@@ -200,7 +196,7 @@ input[type="checkbox"]:checked + span.search-form__pseudo-checkbox::after {
 
 .more-button {
   width: calc(100% - 4px);
-  margin: 0px 0px 2px 2px;
+  margin: 30px 0px 2px 2px;
 }
 
 .button:hover {
@@ -227,15 +223,12 @@ input[type="checkbox"]:checked + span.search-form__pseudo-checkbox::after {
 /* Вторая секция -------------------------------------------------------------------------------- */
 
 .content__details {
-  font-family: 'Oswald', sans-serif;
-}
-
-.content__details {
   display: flex;
   flex-direction: column;
   grid-area: content_grid_details;
   justify-content: space-between;
   align-items: stretch;
+  font-family: 'Oswald', sans-serif;
   row-gap: 25px;
   width: 100%;
   height: 100%;
@@ -268,7 +261,7 @@ input[type="checkbox"]:checked + span.search-form__pseudo-checkbox::after {
   display: flex;
   flex-direction: column;
   gap: 28px;
-  padding: 2px 2px 30px 2px;
+  padding: 2px 2px 0px 2px;
 }
 
 /* Состояния карточек -------------------------------------------------------------------------------- */
@@ -280,7 +273,6 @@ input[type="checkbox"]:checked + span.search-form__pseudo-checkbox::after {
 }
 
 .content__card-link_current {
-  display: block;
   background-color: #545050;
 }
 
@@ -291,6 +283,7 @@ input[type="checkbox"]:checked + span.search-form__pseudo-checkbox::after {
 }
 
 .content__card-link:active {
+  text-decoration: none;
   background: #545050;
 }
 
@@ -339,7 +332,9 @@ input[type="checkbox"]:checked + span.search-form__pseudo-checkbox::after {
 }
 
 .content__video-card-thumbnail {
-  height: 110px;
+  display: block;
+  width: 100%;
+  height: 109px;
   object-fit: cover;
   object-position: center;
 }
